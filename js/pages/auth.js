@@ -10,7 +10,12 @@
     const pwToggle = M.forms.passwordToggleHTML;
     const next = qs('next') === 'checkout' ? 'pages/checkout.html' : 'pages/account.html';
     const legal = '<p class="hint" style="text-align:center">By continuing you agree to the <a class="link" href="' + url('pages/legal.html?doc=terms') + '">Terms</a> and <a class="link" href="' + url('pages/legal.html?doc=privacy') + '">Privacy Policy</a>.</p>';
-    const demoNote = '<p class="demo-note" style="justify-content:center">' + M.icon('info') + 'Demo: any email and an 8+ character password with a number works. Use <strong>&nbsp;error@example.com&nbsp;</strong> to see a failed login.</p>';
+    const demoLogin = '<div class="demo-login" role="note" aria-labelledby="demo-login-t">' + M.icon('info') + '<div class="demo-login__body">' +
+      '<p class="demo-login__title" id="demo-login-t">Demo login</p>' +
+      '<p>Login is simulated in this prototype — any email with a password of 8 or more characters works.</p>' +
+      '<dl class="demo-login__creds"><dt>Email</dt><dd><code>demo@example.com</code></dd><dt>Password</dt><dd><code>demo1234</code></dd></dl>' +
+      '<div class="demo-login__actions"><button type="button" class="btn btn--sm" data-fill-demo>Fill demo login</button>' +
+      '<p class="demo-login__hint">To see a failed login, use <code>error@example.com</code>.</p></div></div></div>';
     const alertBox = '<div class="alert alert--error" data-form-alert hidden tabindex="-1" role="alert">' + M.icon('alert-circle') + '<div><p class="alert__title" data-alert-title></p><p class="alert__body" data-alert-body></p></div></div>';
     const showAlert = (t, b) => { const a = $('[data-form-alert]'); a.hidden = false; $('[data-alert-title]').textContent = t; $('[data-alert-body]').textContent = b; a.focus(); };
     const head = (title, sub) => '<a class="logo" href="' + url('index.html') + '" style="margin-bottom:28px">' + M.LOGO + '<span>Templora</span></a><h1 class="auth__title">' + title + '</h1><p class="text-secondary" style="margin-top:6px;margin-bottom:24px">' + sub + '</p>';
@@ -18,14 +23,21 @@
     const focusState = () => { const h = $('[data-focus]'); if (h) h.focus(); };
 
     if (mode === 'login') {
-      card.innerHTML = head('Welcome back', 'Log in to access your purchases and downloads.') +
+      card.innerHTML = head('Welcome back', 'Log in to access your purchases and downloads.') + demoLogin +
         '<form class="form" novalidate data-form>' + alertBox +
         '<div class="field"><label class="label" for="email">Email address</label><input class="input" id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-err">' + err('email') + '</div>' +
         '<div class="field"><div style="display:flex;justify-content:space-between;align-items:baseline"><label class="label" for="password">Password</label><a class="link" style="font-size:var(--text-meta)" href="' + url('pages/forgot-password.html') + '">Forgot password?</a></div><div class="input-group"><input class="input" id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="password-err">' + pwToggle('password') + '</div>' + err('password') + '</div>' +
         '<label class="check"><input type="checkbox" name="remember"><span>Keep me logged in on this device</span></label>' +
         '<button class="btn btn--primary btn--lg btn--block" type="submit">Log in</button></form>' +
         '<p style="text-align:center;margin-top:20px;font-size:var(--text-sm)">New to Templora? <a class="link" href="' + url('pages/register.html' + (qs('next') ? '?next=' + qs('next') : '')) + '">Create an account</a></p>' +
-        '<div style="margin-top:20px;display:grid;gap:10px">' + demoNote + legal + '</div>';
+        '<div style="margin-top:20px">' + legal + '</div>';
+      card.querySelector('[data-fill-demo]').addEventListener('click', () => {
+        const f = card.querySelector('[data-form]');
+        f.email.value = 'demo@example.com';
+        f.password.value = 'demo1234';
+        [f.email, f.password].forEach((el) => M.forms.show(el, ''));
+        f.querySelector('[type=submit]').focus();
+      });
       $('[data-form]').addEventListener('submit', async (e) => {
         e.preventDefault();
         const f = e.target;
@@ -85,7 +97,7 @@
           '<div class="field"><label class="label" for="password">New password</label><div class="input-group"><input class="input" id="password" name="password" type="password" autocomplete="new-password" required data-validate="password" data-strength="pw-strength" aria-describedby="password-hint password-err">' + pwToggle('password') + '</div><div class="strength" id="pw-strength" data-score="0" aria-hidden="true"><span></span><span></span><span></span><span></span></div><p class="hint" id="password-hint">8+ characters with at least one letter and one number.</p>' + err('password') + '</div>' +
           '<div class="field"><label class="label" for="confirm">Confirm new password</label><div class="input-group"><input class="input" id="confirm" name="confirm" type="password" autocomplete="new-password" required data-match="#password" data-msg-match="Passwords don’t match." aria-describedby="confirm-err">' + pwToggle('confirm') + '</div>' + err('confirm') + '</div>' +
           '<button class="btn btn--primary btn--lg btn--block" type="submit">Update password</button></form>' +
-          '<p class="demo-note" style="justify-content:center;margin-top:16px">' + M.icon('info') + 'Reset tokens are validated server-side in production. <a class="link" href="?step=expired">&nbsp;See the expired-link state</a></p>';
+          '<p class="demo-note demo-note--center" style="margin-top:16px">' + M.icon('info') + 'Reset tokens are validated server-side in production. <a href="?step=expired">See the expired-link state</a></p>';
         $('[data-form]').addEventListener('submit', async (e) => {
           e.preventDefault();
           if (!M.forms.validate(e.target)) return;
