@@ -269,8 +269,22 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .alert--warning { background: var(--color-warning-soft); color: var(--color-warning); border-color: #f8dcb6; }
 .alert--error { background: var(--color-error-soft); color: var(--color-error); border-color: #f5c9c5; }
 .alert--neutral { background: var(--color-bg-alt); color: var(--color-text); border-color: var(--color-border); }
-.demo-note { display: inline-flex; align-items: center; gap: 6px; font-size: var(--text-xs); color: var(--color-warning); font-weight: 500; }
-.demo-note .icon { width: 14px; height: 14px; }
+.demo-note { display: block; font-size: var(--text-xs); line-height: 1.5; color: var(--color-warning); font-weight: 500; }
+.demo-note .icon { display: inline-block; width: 14px; height: 14px; margin-right: 6px; vertical-align: -2px; }
+.demo-note--center { text-align: center; }
+.demo-note a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Demo login helper (auth pages) */
+.demo-login { display: flex; gap: 12px; align-items: flex-start; padding: 14px 16px; margin-bottom: 24px; border-radius: var(--radius-sm); background: var(--color-primary-soft); border: 1px solid var(--color-primary-soft-2); font-size: var(--text-sm); color: var(--color-text-secondary); }
+.demo-login > .icon { color: var(--color-primary); width: 20px; height: 20px; margin-top: 1px; }
+.demo-login__body { flex: 1; min-width: 0; display: grid; gap: 8px; }
+.demo-login__title { font-weight: 600; color: var(--color-text); }
+.demo-login__creds { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; }
+.demo-login__creds dt { color: var(--color-text-muted); }
+.demo-login__creds dd { margin: 0; }
+.demo-login code { font-family: var(--font-mono); font-size: 0.8125rem; color: var(--color-text); background: #fff; border: 1px solid var(--color-border); border-radius: 5px; padding: 1px 6px; white-space: nowrap; }
+.demo-login__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.demo-login__hint { font-size: var(--text-xs); color: var(--color-text-muted); }
 
 /* ---------- Announcement bar ---------- */
 .announcement { background: var(--color-ink); color: #fff; font-size: var(--text-meta); }
