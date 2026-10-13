@@ -1,0 +1,16 @@
+{
+  "name": "templora-marketplace-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend prototype for a multi-vendor digital templates marketplace (HTML, Tailwind CSS, vanilla JS).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/tailwind.src.css -o ./css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./css/tailwind.src.css -o ./css/tailwind.css --watch",
+    "previews": "node scripts/generate-previews.mjs",
+    "serve": "npx --yes http-server . -p 8080 -c-1",
+    "qa": "node scripts/qa-smoke.mjs"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.17"
+  }
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Templora</title>
+  <meta name="description" content="The page you’re looking for doesn’t exist.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffffff">
+  <!-- SEO integration point: WordPress (Yoast / Rank Math) outputs the canonical URL here. -->
+  <meta property="og:site_name" content="Templora">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Page not found | Templora">
+  <meta property="og:description" content="The page you’re looking for doesn’t exist.">
+  <meta property="og:image" content="assets/images/ui/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/tailwind.css">
+  <link rel="stylesheet" href="css/design-tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/icons.js"></script>
+  <script defer src="js/app.js"></script>
+  <script defer src="js/wishlist.js"></script>
+  <script defer src="js/cart.js"></script>
+  <script defer src="js/forms.js"></script>
+  <script defer src="js/search.js"></script>
+  <script defer src="js/animations.js"></script>
+</head>
+<body data-page="notfound">
+  <div data-include="header"></div>
+  <main id="main" tabindex="-1">
+    <section class="container error-page">
+      <div style="display:grid;justify-items:center;gap:14px">
+        <p class="eyebrow">Error 404</p>
+        <h1 class="text-h1">We couldn’t find that page</h1>
+        <p class="text-secondary" style="max-width:48ch">The link may be broken or the page may have moved. Try searching for a template instead.</p>
+        <form class="search-field search-field--lg" role="search" action="pages/search.html" data-search-form style="width:min(520px,100%);margin-top:8px"><label class="sr-only" for="nf-q">Search templates</label><span class="search-field__icon"><span data-icon="search"></span></span><input class="search-field__input" id="nf-q" type="search" name="q" placeholder="Search website templates..." autocomplete="off"><button class="btn btn--primary search-field__submit" type="submit">Search</button></form>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px"><a class="btn btn--dark" href="index.html">Go to homepage</a><a class="btn" href="pages/html-templates.html">Browse templates</a></div>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <noscript><p style="padding:16px;text-align:center">This prototype needs JavaScript for search, cart and dashboards. Product content will be server-rendered in the WordPress build.</p></noscript>
+</body>
+</html>

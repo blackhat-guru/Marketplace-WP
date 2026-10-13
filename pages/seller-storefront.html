@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Seller store | Templora</title>
+  <meta name="description" content="Browse every template published by this seller, read their support and update policies and get in touch.">
+  <meta name="theme-color" content="#ffffff">
+  <!-- SEO integration point: WordPress (Yoast / Rank Math) outputs the canonical URL here. -->
+  <meta property="og:site_name" content="Templora">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Seller store | Templora">
+  <meta property="og:description" content="Browse every template published by this seller, read their support and update policies and get in touch.">
+  <meta property="og:image" content="../assets/images/ui/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/design-tokens.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/custom.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="../js/data.js"></script>
+  <script defer src="../js/icons.js"></script>
+  <script defer src="../js/app.js"></script>
+  <script defer src="../js/wishlist.js"></script>
+  <script defer src="../js/cart.js"></script>
+  <script defer src="../js/forms.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/animations.js"></script>
+  <script defer src="../js/filters.js"></script>
+  <script defer src="../js/pages/storefront.js"></script>
+</head>
+<body data-page="storefront">
+  <div data-include="header"></div>
+  <main id="main" tabindex="-1">
+    <div class="store-banner" data-banner role="presentation"></div>
+    <div class="container">
+      <div class="store-head" data-store-head></div>
+      <div style="margin-top:20px" data-breadcrumbs></div>
+    </div>
+    <section class="section section--tight" aria-labelledby="store-products">
+      <div class="container" data-store-root>
+        <div class="listing-head" style="margin-bottom:20px">
+          <h2 class="text-h3" id="store-products">Published templates</h2>
+          <form class="search-field listing-search" role="search" aria-label="Search this store">
+            <label class="sr-only" for="store-search">Search this store</label>
+            <span class="search-field__icon"><span data-icon="search"></span></span>
+            <input class="search-field__input" id="store-search" type="search" placeholder="Search this store…" autocomplete="off" data-local-search>
+          </form>
+        </div>
+        <div class="listing" data-listing>
+          <aside class="filters-panel" id="filters-panel" aria-labelledby="filters-title">
+            <div class="filters-panel__head"><h2 class="filters__title" id="filters-title-m">Filters</h2><button type="button" class="icon-btn" data-close-filters aria-label="Close filters"><span data-icon="x"></span></button></div>
+            <div class="filters">
+              <div class="filters__head"><h2 class="filters__title" id="filters-title">Filters</h2><button type="button" class="btn btn--ghost btn--sm" data-filters-clear>Clear all</button></div>
+              <div data-filters></div>
+            </div>
+            <div class="filters-panel__foot"><button type="button" class="btn" data-filters-clear>Clear all</button><button type="button" class="btn btn--primary" data-filters-apply>Show results</button></div>
+          </aside>
+          <div>
+            <div class="toolbar">
+              <p class="toolbar__count"><strong data-count>0</strong> templates</p>
+              <div class="toolbar__right">
+                <button type="button" class="btn hide-desktop" data-open-filters aria-controls="filters-panel" aria-expanded="false"><span data-icon="sliders"></span>Filters <span class="badge badge--new" data-active-count hidden></span></button>
+                <label class="sr-only" for="store-sort">Sort by</label>
+                <select class="select" id="store-sort" data-sort></select>
+              </div>
+            </div>
+            <div class="active-filters" data-active-filters aria-label="Active filters"></div>
+            <p class="sr-only" aria-live="polite" data-results-status></p>
+            <div class="product-grid product-grid--3" data-results aria-busy="true"></div>
+            <div data-pagination></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt" aria-labelledby="policies-h" id="contact">
+      <div class="container">
+        <div class="dash-grid dash-grid--1-1">
+          <div class="card card--pad"><h2 class="card__title" id="policies-h">Support &amp; update policies</h2><dl style="margin-top:16px;display:grid;gap:16px" data-policies></dl></div>
+          <div class="card card--pad"><h2 class="card__title">Message the seller</h2><p class="text-muted" style="font-size:var(--text-sm);margin-top:4px">Pre-sale questions go to the seller’s marketplace inbox.</p><div style="margin-top:16px" data-contact></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <noscript><p style="padding:16px;text-align:center">This prototype needs JavaScript for search, cart and dashboards. Product content will be server-rendered in the WordPress build.</p></noscript>
+</body>
+</html>
