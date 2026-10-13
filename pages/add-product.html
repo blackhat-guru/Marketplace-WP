@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add a product | Seller dashboard | Templora</title>
+  <meta name="description" content="Submit a new template for review.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#ffffff">
+  <!-- SEO integration point: WordPress (Yoast / Rank Math) outputs the canonical URL here. -->
+  <meta property="og:site_name" content="Templora">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Add a product | Seller dashboard | Templora">
+  <meta property="og:description" content="Submit a new template for review.">
+  <meta property="og:image" content="../assets/images/ui/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/design-tokens.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/custom.css">
+  <script defer src="../js/data.js"></script>
+  <script defer src="../js/icons.js"></script>
+  <script defer src="../js/app.js"></script>
+  <script defer src="../js/wishlist.js"></script>
+  <script defer src="../js/cart.js"></script>
+  <script defer src="../js/forms.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/animations.js"></script>
+  <script defer src="../js/pages/add-product.js"></script>
+</head>
+<body data-page="addProduct" class="workspace">
+  <a class="skip-link" href="#ws-main">Skip to main content</a>
+  <div class="app-shell">
+      <aside class="app-sidebar" aria-label="Seller workspace">
+        <div class="app-sidebar__inner">
+          <a class="logo logo--inverse app-sidebar__brand" href="../index.html" style="padding:0 8px 20px" aria-label="Templora storefront"><svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2a303b"/><rect x="7" y="8" width="18" height="4.2" rx="2.1" fill="#fff"/><rect x="13.9" y="8" width="4.2" height="16" rx="2.1" fill="#fff"/><circle cx="23" cy="22" r="3" fill="#6b84ff"/></svg><span>Templora</span><span class="badge" style="background:rgba(255,255,255,.1);color:#cfd5df;margin-left:4px">Seller</span></a>
+          <nav aria-label="Seller workspace sections">
+            <ul class="app-nav">
+              <li><a class="app-nav__link" href="seller-dashboard.html#overview"><span data-icon="home"></span>Overview</a></li>
+              <li><a class="app-nav__link" href="seller-dashboard.html#products"><span data-icon="package"></span>Products</a></li>
+              <li><a class="app-nav__link" href="add-product.html" aria-current="page"><span data-icon="plus"></span>Add product</a></li>
+              <li><a class="app-nav__link" href="seller-dashboard.html#orders"><span data-icon="receipt"></span>Orders</a></li>
+              <li><a class="app-nav__link" href="seller-dashboard.html#earnings"><span data-icon="wallet"></span>Earnings &amp; payouts</a></li>
+              <li><a class="app-nav__link" href="seller-dashboard.html#analytics"><span data-icon="line-chart"></span>Analytics</a></li>
+              <li><a class="app-nav__link" href="seller-dashboard.html#reviews"><span data-icon="message"></span>Reviews &amp; messages <span class="app-nav__badge" data-unread>2</span></a></li>
+              <li><a class="app-nav__link" href="seller-dashboard.html#settings"><span data-icon="settings"></span>Store settings</a></li>
+            </ul>
+          </nav>
+          <div class="app-sidebar__extra" style="margin-top:auto;padding:16px 8px 0;border-top:1px solid rgba(255,255,255,.08)">
+            <a class="app-nav__link" href="seller-storefront.html?seller=pixelforge"><span data-icon="store"></span>View public store</a>
+            <a class="app-nav__link" href="help.html#earnings"><span data-icon="help"></span>Seller help</a>
+          </div>
+        </div>
+      </aside>
+    <div style="min-width:0;display:flex;flex-direction:column">
+      <header class="workspace-bar"><a class="logo hide-desktop" href="../index.html" aria-label="Templora storefront"><svg class="logo__mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0e1116"/><rect x="7" y="8" width="18" height="4.2" rx="2.1" fill="#fff"/><rect x="13.9" y="8" width="4.2" height="16" rx="2.1" fill="#fff"/><circle cx="23" cy="22" r="3" fill="#6b84ff"/></svg></a><p class="hide-mobile" style="font-size:var(--text-sm);color:var(--color-text-muted)" data-ws-crumb>Seller workspace</p><span class="badge badge--demo">Demo data</span><div style="margin-left:auto;display:flex;gap:8px;align-items:center"><a class="btn btn--ghost btn--sm hide-mobile" href="../index.html"><span data-icon="arrow-left" data-icon-class="icon--sm"></span>Back to marketplace</a><a class="btn btn--primary btn--sm" href="add-product.html"><span data-icon="plus" data-icon-class="icon--sm"></span>New product</a><span class="avatar" title="PixelForge Studio (demo)" aria-hidden="true">PF</span></div></header>
+      <main class="app-main" id="ws-main" tabindex="-1" style="flex:1" data-editor-root></main>
+    </div>
+  </div>
+  <noscript><p style="padding:16px;text-align:center">This prototype needs JavaScript for search, cart and dashboards. Product content will be server-rendered in the WordPress build.</p></noscript>
+</body>
+</html>

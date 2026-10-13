@@ -1,0 +1,4 @@
+/* Tailwind entry. Build with `npm run build:css` → css/tailwind.css (committed so the prototype runs without a build). */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

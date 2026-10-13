@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML Website Templates — Responsive HTML5, Tailwind &amp; Bootstrap | Templora</title>
+  <meta name="description" content="Browse responsive HTML website templates for landing pages, SaaS, agencies, portfolios, e-commerce and dashboards. Filter by technology, features, license and price.">
+  <meta name="theme-color" content="#ffffff">
+  <!-- SEO integration point: WordPress (Yoast / Rank Math) outputs the canonical URL here. -->
+  <meta property="og:site_name" content="Templora">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="HTML Website Templates — Responsive HTML5, Tailwind &amp; Bootstrap | Templora">
+  <meta property="og:description" content="Browse responsive HTML website templates for landing pages, SaaS, agencies, portfolios, e-commerce and dashboards. Filter by technology, features, license and price.">
+  <meta property="og:image" content="../assets/images/ui/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/design-tokens.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/custom.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="../js/data.js"></script>
+  <script defer src="../js/icons.js"></script>
+  <script defer src="../js/app.js"></script>
+  <script defer src="../js/wishlist.js"></script>
+  <script defer src="../js/cart.js"></script>
+  <script defer src="../js/forms.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/animations.js"></script>
+  <script defer src="../js/filters.js"></script>
+  <script defer src="../js/pages/category.js"></script>
+</head>
+<body data-page="category" data-nav="html">
+  <div data-include="header"></div>
+  <main id="main" tabindex="-1">
+    <header class="page-header">
+      <div class="container">
+        <div data-breadcrumbs></div>
+        <div class="listing-head">
+          <div>
+            <h1 class="page-header__title" data-title>HTML Website Templates</h1>
+            <p class="page-header__desc" data-desc>Hand-coded HTML, CSS and JavaScript templates — no framework lock-in. Every template is responsive, documented and previewable page by page.</p>
+          </div>
+          <form class="search-field listing-search" role="search" aria-label="Search within HTML templates">
+            <label class="sr-only" for="cat-search">Search within HTML templates</label>
+            <span class="search-field__icon"><span data-icon="search"></span></span>
+            <input class="search-field__input" id="cat-search" type="search" placeholder="Search in this category…" autocomplete="off" data-local-search>
+          </form>
+        </div>
+        <nav class="subnav" aria-label="HTML template subcategories">
+          <ul class="chip-row chip-row--scroll" data-subnav style="list-style:none;margin-top:0"></ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section section--tight" aria-label="Templates">
+      <div class="container">
+        <div class="listing" data-listing>
+          <aside class="filters-panel" id="filters-panel" aria-labelledby="filters-title">
+            <div class="filters-panel__head"><h2 class="filters__title" id="filters-title-m">Filters</h2><button type="button" class="icon-btn" data-close-filters aria-label="Close filters"><span data-icon="x"></span></button></div>
+            <div class="filters">
+              <div class="filters__head"><h2 class="filters__title" id="filters-title">Filters</h2><button type="button" class="btn btn--ghost btn--sm" data-filters-clear>Clear all</button></div>
+              <div data-filters></div>
+            </div>
+            <div class="filters-panel__foot"><button type="button" class="btn" data-filters-clear>Clear all</button><button type="button" class="btn btn--primary" data-filters-apply>Show results</button></div>
+          </aside>
+          <div>
+            <div class="toolbar">
+              <p class="toolbar__count"><strong data-count>0</strong> templates</p>
+              <div class="toolbar__right">
+                <button type="button" class="btn hide-desktop" data-open-filters aria-controls="filters-panel" aria-expanded="false"><span data-icon="sliders"></span>Filters <span class="badge badge--new" data-active-count hidden></span></button>
+                <label class="sr-only" for="sort">Sort by</label>
+                <select class="select" id="sort" data-sort></select>
+              </div>
+            </div>
+            <div class="active-filters" data-active-filters aria-label="Active filters"></div>
+            <p class="sr-only" aria-live="polite" data-results-status></p>
+            <div class="product-grid product-grid--3" data-results aria-busy="true"></div>
+            <div data-pagination></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="about-cat">
+      <div class="container seo-content">
+        <div>
+          <h2 class="text-h3" id="about-cat">About HTML website templates</h2>
+          <div class="prose" style="margin-top:12px">
+            <p>HTML templates are complete, static website front-ends built with HTML, CSS and JavaScript. They load fast, work on any host and are easy to connect to the CMS or backend of your choice.</p>
+            <p>On Templora each template lists its pages, components, dependencies and browser support, so you can check it fits your project before you buy. Templates built with <a href="html-templates.html?tech=tailwind">Tailwind CSS</a> or <a href="html-templates.html?tech=bootstrap">Bootstrap</a> are filterable by technology.</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-h3" id="cat-faq">Frequently asked questions</h2>
+          <div style="margin-top:8px" data-faq></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <noscript><p style="padding:16px;text-align:center">This prototype needs JavaScript for search, cart and dashboards. Product content will be server-rendered in the WordPress build.</p></noscript>
+</body>
+</html>

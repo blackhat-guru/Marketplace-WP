@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Templora — Support &amp; Enquiries</title>
+  <meta name="description" content="Contact the Templora team about orders, licensing, selling or partnerships.">
+  <meta name="theme-color" content="#ffffff">
+  <!-- SEO integration point: WordPress (Yoast / Rank Math) outputs the canonical URL here. -->
+  <meta property="og:site_name" content="Templora">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Templora — Support &amp; Enquiries">
+  <meta property="og:description" content="Contact the Templora team about orders, licensing, selling or partnerships.">
+  <meta property="og:image" content="../assets/images/ui/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/design-tokens.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/custom.css">
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="../js/data.js"></script>
+  <script defer src="../js/icons.js"></script>
+  <script defer src="../js/app.js"></script>
+  <script defer src="../js/wishlist.js"></script>
+  <script defer src="../js/cart.js"></script>
+  <script defer src="../js/forms.js"></script>
+  <script defer src="../js/search.js"></script>
+  <script defer src="../js/animations.js"></script>
+  <script defer src="../js/pages/static.js"></script>
+</head>
+<body data-page="contact" data-nav="contact">
+  <div data-include="header"></div>
+  <main id="main" tabindex="-1">
+    <header class="page-header"><div class="container"><div data-breadcrumbs></div><h1 class="page-header__title">Contact us</h1><p class="page-header__desc">Questions about an order, a license or selling on Templora? Send us a message. For product-specific help, message the seller from the product page.</p></div></header>
+    <section class="section section--tight">
+      <div class="container contact-layout">
+        <form class="card form-section" novalidate data-contact-form aria-labelledby="cf-h">
+          <h2 class="card__title" id="cf-h">Send a message</h2>
+          <div class="alert alert--success" data-success hidden tabindex="-1" role="status"><span data-icon="check-circle"></span><div><p class="alert__title">Message sent (simulated)</p><p class="alert__body">Thanks! In production you’d receive a confirmation email and a reply within 2 business days. Nothing was sent from this prototype.</p></div></div>
+          <div class="form-row form-row--2">
+            <div class="field"><label class="label" for="c-name">Name</label><input class="input" id="c-name" name="name" required autocomplete="name" aria-describedby="c-name-err"><p class="field-error" id="c-name-err"><span data-icon="alert-circle"></span><span></span></p></div>
+            <div class="field"><label class="label" for="c-email">Email</label><input class="input" id="c-email" name="email" type="email" required autocomplete="email" aria-describedby="c-email-err"><p class="field-error" id="c-email-err"><span data-icon="alert-circle"></span><span></span></p></div>
+          </div>
+          <div class="field"><label class="label" for="c-cat">Enquiry category</label><select class="select" id="c-cat" name="category" required aria-describedby="c-cat-err"><option value="">Choose a topic</option><option>Order or payment</option><option>Downloads</option><option>Licensing</option><option>Refund request</option><option>Selling on Templora</option><option>Copyright / DMCA</option><option>Partnerships &amp; press</option><option>Something else</option></select><p class="field-error" id="c-cat-err"><span data-icon="alert-circle"></span><span></span></p></div>
+          <div class="field"><label class="label" for="c-order">Order number <span class="label__optional">(optional)</span></label><input class="input" id="c-order" name="order" placeholder="e.g. DEMO-10482"></div>
+          <div class="field"><label class="label" for="c-msg">Message</label><textarea class="textarea" id="c-msg" name="message" required minlength="20" maxlength="2000" rows="6" data-count="c-msg-count" aria-describedby="c-msg-count c-msg-err"></textarea><p class="hint" id="c-msg-count">0 / 2000</p><p class="field-error" id="c-msg-err"><span data-icon="alert-circle"></span><span></span></p></div>
+          <div class="field"><label class="check"><input type="checkbox" id="c-consent" name="consent" required data-label="Privacy consent" data-msg-required="Please confirm so we can use your details to reply." aria-describedby="c-consent-err"><span>I agree that Templora may use these details to respond, as described in the <a href="legal.html?doc=privacy">Privacy Policy</a>.</span></label><p class="field-error" id="c-consent-err"><span data-icon="alert-circle"></span><span></span></p></div>
+          <button class="btn btn--primary btn--lg" type="submit" style="justify-self:start"><span data-icon="send"></span>Send message</button>
+        </form>
+        <aside style="display:grid;gap:16px" aria-label="Other ways to reach us">
+          <div class="card card--pad"><h2 class="card__title">Email</h2><p class="text-secondary" style="font-size:var(--text-sm);margin-top:6px">support@templora.example <span class="badge badge--demo" style="height:18px">placeholder</span></p><p class="hint" style="margin-top:6px">We aim to reply within 2 business days.</p></div>
+          <div class="card card--pad"><h2 class="card__title">Help Center</h2><p class="text-secondary" style="font-size:var(--text-sm);margin-top:6px">Answers about buying, licenses, downloads, refunds and selling.</p><a class="btn btn--sm" style="margin-top:12px" href="help.html">Visit the Help Center</a></div>
+          <div class="card card--pad"><h2 class="card__title">Follow us</h2><ul class="social social--light" style="margin-top:12px" aria-label="Social media (placeholder links)"><li><a href="https://x.com" target="_blank" rel="noopener" aria-label="X (placeholder, new tab)"><span data-icon="twitter"></span></a></li><li><a href="https://github.com" target="_blank" rel="noopener" aria-label="GitHub (placeholder, new tab)"><span data-icon="github"></span></a></li><li><a href="https://dribbble.com" target="_blank" rel="noopener" aria-label="Dribbble (placeholder, new tab)"><span data-icon="dribbble"></span></a></li><li><a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn (placeholder, new tab)"><span data-icon="linkedin"></span></a></li></ul></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <div data-include="footer"></div>
+  <noscript><p style="padding:16px;text-align:center">This prototype needs JavaScript for search, cart and dashboards. Product content will be server-rendered in the WordPress build.</p></noscript>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Templora — design tokens
+   Single source of truth for colour, type, spacing, radius, elevation and
+   motion. Tailwind (tailwind.config.js) and components.css both read these.
+   ========================================================================== */
+:root {
+  /* ---- Colour: neutral-first, one cobalt accent ---- */
+  --color-primary: #2747e8;          /* 6.1:1 on white */
+  --color-primary-hover: #1c35c0;
+  --color-primary-soft: #eef1fe;
+  --color-primary-soft-2: #dde3fd;
+  --color-on-primary: #ffffff;
+
+  --color-bg: #ffffff;               /* main background */
+  --color-bg-alt: #f6f7f9;           /* secondary background / bands */
+  --color-surface: #ffffff;          /* cards */
+  --color-surface-sunken: #f1f3f6;   /* wells, inputs on alt bg */
+  --color-ink: #0e1116;              /* dark sections, seller workspace */
+  --color-ink-2: #171b22;
+  --color-ink-3: #262c36;
+
+  --color-text: #0e1116;             /* primary text  (18.6:1) */
+  --color-text-secondary: #3c4350;   /* secondary     (10.1:1) */
+  --color-text-muted: #5f6878;       /* muted         (5.6:1)  */
+  --color-text-inverse: #ffffff;
+  --color-text-inverse-muted: #a9b1bf;
+
+  --color-border: #e4e7ec;
+  --color-border-strong: #cfd4dc;
+
+  --color-success: #087443;
+  --color-success-soft: #e7f6ee;
+  --color-warning: #a14306;
+  --color-warning-soft: #fef4e6;
+  --color-error: #b42318;
+  --color-error-soft: #fdecec;
+  --color-info: var(--color-primary);
+  --color-info-soft: var(--color-primary-soft);
+
+  --color-badge-free-bg: var(--color-success-soft);
+  --color-badge-free-text: var(--color-success);
+  --color-badge-premium-bg: var(--color-ink);
+  --color-badge-premium-text: #ffffff;
+  --color-badge-sale-bg: var(--color-error-soft);
+  --color-badge-sale-text: var(--color-error);
+  --color-rating: #d97706;           /* stars are always paired with a number */
+
+  --color-focus: #2747e8;
+  --focus-ring: 0 0 0 3px rgba(39, 71, 232, 0.28);
+
+  /* ---- Typography (Poppins) ---- */
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, 'Segoe UI', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --text-display: clamp(2.25rem, 1.55rem + 2.9vw, 3.5rem);  /* 36 → 56 */
+  --text-h1: clamp(1.875rem, 1.5rem + 1.5vw, 2.5rem);        /* 30 → 40 */
+  --text-h2: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);            /* 24 → 32 */
+  --text-h3: 1.25rem;     /* 20 */
+  --text-h4: 1.0625rem;   /* 17 */
+  --text-product: 0.9375rem; /* 15 product titles */
+  --text-body: 1rem;      /* 16 */
+  --text-sm: 0.875rem;    /* 14 descriptions, nav, buttons */
+  --text-meta: 0.8125rem; /* 13 metadata */
+  --text-xs: 0.75rem;     /* 12 labels, badges */
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-body: 1.6;
+  --tracking-tight: -0.02em;
+  --tracking-caps: 0.06em;
+
+  /* ---- Spacing (4/8pt) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* ---- Layout ---- */
+  --container-max: 1280px;
+  --container-narrow: 880px;
+  --gutter: 16px;
+  --section-space: 56px;
+  --grid-gap: 16px;
+  --card-padding: 16px;
+  --form-gap: 20px;
+  --header-h: 64px;
+  --sidebar-w: 264px;
+
+  /* ---- Radius ---- */
+  --radius-xs: 6px;    /* small controls, badges */
+  --radius-sm: 10px;   /* buttons, inputs */
+  --radius-md: 14px;   /* product cards, dropdowns */
+  --radius-lg: 18px;   /* modals, panels */
+  --radius-xl: 24px;   /* large content panels */
+  --radius-pill: 999px;
+
+  /* ---- Elevation ---- */
+  --shadow-1: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-2: 0 6px 16px -4px rgba(16, 24, 40, 0.1), 0 2px 4px -2px rgba(16, 24, 40, 0.05);
+  --shadow-3: 0 24px 48px -12px rgba(16, 24, 40, 0.22);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+  --dur-slow: 320ms;
+
+  --z-header: 40;
+  --z-dropdown: 50;
+  --z-drawer: 60;
+  --z-modal: 70;
+  --z-toast: 80;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 24px;
+    --section-space: 72px;
+    --grid-gap: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --gutter: 32px;
+    --section-space: 88px;
+    --grid-gap: 24px;
+    --header-h: 68px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+  }
+}
